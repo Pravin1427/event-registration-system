@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+</head>
+<body>
+    <h2>Registration Successful!</h2>
+    <p>Thank you, {{ visitor.full_name }}. Your information has been recorded.</p>
+
+    <h3>Your Visitor Badge:</h3>
+    <img src="{{ badge_url }}" alt="Visitor Badge" style="border: 2px solid black; width: 400px; height: 200px;">
+
+    <br><br>
+    <a href="{{ pdf_url }}" download>
+        <button>Download Badge as PDF</button>
+    </a>
+
+    <br><br>
+    <a href="/">Register Another Visitor</a>
+</body>
+</html>
