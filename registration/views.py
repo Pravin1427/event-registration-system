@@ -29,7 +29,7 @@ def register_visitor(request):
         form = VisitorForm()
     return render(request, 'registration/register.html', {'form': form})
 
-# View for the success page
+# Success page View
 def success(request, visitor_id):
     visitor = Visitor.objects.get(id=visitor_id)
     badge_url = reverse('generate_badge', kwargs={'visitor_id': visitor.id})
@@ -91,7 +91,7 @@ def download_badge_pdf(request, visitor_id):
     p.save()
     return response
 
-
+# Send visitor badge via email
 def send_badge_email(visitor):
     subject = "Your Event Visitor Badge"
     message = f"Hello {visitor.full_name},\n\nThank you for registering! Attached is your visitor badge."
