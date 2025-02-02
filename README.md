@@ -28,25 +28,25 @@ This is a Django-based **Event Registration System** that allows users to regist
 ---
 
 ## Installation Guide
-### ** Clone the Repository**
+###  Clone the Repository
 ```bash
 git clone https://github.com/yourusername/event-registration.git
 cd event-registration
 ```
 
-### ** Set Up a Virtual Environment**
+###  Set Up a Virtual Environment
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # macOS/Linux
 venv\Scripts\activate    # Windows
 ```
 
-### ** Install Dependencies**
+###  Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### ** Set Up `.env` File**
+###  Set Up `.env` File
 Create a `.env` file in the project root and add the following configurations:
 ```ini
 # Database Config
@@ -61,19 +61,19 @@ SENDGRID_API_KEY=your-sendgrid-api-key
 SENDGRID_SENDER_EMAIL=your-verified-email@example.com
 ```
 
-### ** Set Up the Database**
+###  Set Up the Database
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### ** Create a Superuser for Admin Panel**
+###  Create a Superuser for Admin Panel
 ```bash
 python manage.py createsuperuser
 ```
 Follow the prompts to set a **username, email, and password**.
 
-### ** Run the Server**
+###  Run the Server
 ```bash
 python manage.py runserver
 ```
