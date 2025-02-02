@@ -3,5 +3,5 @@ from .models import Visitor
 
 class VisitorForm(forms.ModelForm):
     class Meta:
-        model = Visitor
-        fields = ['full_name', 'email', 'phone', 'photo']
+        model = Visitor  # Model used for form
+        fields = ['full_name', 'email', 'phone', 'photo']  # Fields included in the form

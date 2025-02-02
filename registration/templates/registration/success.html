@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Successful</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
-    <h2>Registration Successful!</h2>
-    <p>Thank you, {{ visitor.full_name }}. Your information has been recorded.</p>
+<body class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+    <div class="card p-4 shadow-lg text-center w-100" style="max-width: 600px;">
+        <h2 class="text-success">🎉 Registration Successful!</h2>
+        <p class="mb-3">Thank you, <strong>{{ visitor.full_name }}</strong>. Your information has been recorded.</p>
 
-    <h3>Your Visitor Badge:</h3>
-    <img src="{{ badge_url }}" alt="Visitor Badge" style="border: 2px solid black; width: 400px; height: 200px;">
+        <h4 class="mb-3">Your Visitor Badge:</h4>
+        <img src="{{ badge_url }}" alt="Visitor Badge" class="img-fluid border border-dark rounded" style="max-width: 400px;">
 
-    <br><br>
-    <a href="{{ pdf_url }}" download>
-        <button>Download Badge as PDF</button>
-    </a>
-
-    <br><br>
-    <a href="/">Register Another Visitor</a>
+        <div class="mt-4">
+            <a href="{{ pdf_url }}" download class="btn btn-success w-100 mb-2">Download Badge as PDF</a>
+            <a href="/" class="btn btn-secondary w-100">Register Another Visitor</a>
+        </div>
+    </div>
 </body>
 </html>
