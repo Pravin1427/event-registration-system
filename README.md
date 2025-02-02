@@ -20,7 +20,7 @@ This is a Django-based **Event Registration System** that allows users to regist
 ## Technologies Used
 - **Backend:** Django (Python)
 - **Database:** PostgreSQL
-- **Frontend:** HTML, CSS, Bootstrap
+- **Frontend:** HTML, CSS, Bootstrap, JavaScript
 - **Email Integration:** SendGrid API
 - **Badge Generation:** Pillow (PIL), ReportLab
 - **Environment Variables:** `python-dotenv`
