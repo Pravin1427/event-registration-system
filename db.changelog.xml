@@ -16,7 +16,7 @@
         </createTable>
     </changeSet>
 
-    <!-- Add 'test' column in a new changeset -->
+    <!-- Adding 'test' column in a new changeset -->
     <changeSet id="2" author="prabintimilsina">
         <addColumn tableName="users">
             <column name="test" type="VARCHAR(255)"/>
