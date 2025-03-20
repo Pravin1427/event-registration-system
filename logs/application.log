@@ -1,0 +1,336 @@
+<log>
+                <timestamp>2025-03-20 14:32:59.822</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>c.e.l.EventLoggingServiceApplication</logger>
+                <message>Starting EventLoggingServiceApplication using Java 23.0.2 with PID 5287 (/Users/prabintimilsina/Documents/event-logging-service/target/classes started by prabintimilsina in /Users/prabintimilsina/Documents/event-logging-service)
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:32:59.823</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>c.e.l.EventLoggingServiceApplication</logger>
+                <message>No active profile set, falling back to 1 default profile: "default"
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.227</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.s.b.w.e.tomcat.TomcatWebServer</logger>
+                <message>Tomcat initialized with port 8080 (http)
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.233</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.coyote.http11.Http11NioProtocol</logger>
+                <message>Initializing ProtocolHandler ["http-nio-8080"]
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.234</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.catalina.core.StandardService</logger>
+                <message>Starting service [Tomcat]
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.234</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.catalina.core.StandardEngine</logger>
+                <message>Starting Servlet engine: [Apache Tomcat/10.1.36]
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.256</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.c.c.C.[Tomcat].[localhost].[/]</logger>
+                <message>Initializing Spring embedded WebApplicationContext
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.257</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.s.b.w.s.c.ServletWebServerApplicationContext</logger>
+                <message>Root WebApplicationContext: initialization completed in 412 ms
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.462</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.s.b.a.e.web.EndpointLinksResolver</logger>
+                <message>Exposing 1 endpoint beneath base path '/actuator'
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.480</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.coyote.http11.Http11NioProtocol</logger>
+                <message>Starting ProtocolHandler ["http-nio-8080"]
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.499</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.s.b.w.e.tomcat.TomcatWebServer</logger>
+                <message>Tomcat started on port 8080 (http) with context path '/'
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:00.506</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>c.e.l.EventLoggingServiceApplication</logger>
+                <message>Started EventLoggingServiceApplication in 0.88 seconds (process running for 1.011)
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:50.843</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-1</thread>
+                <logger>o.a.c.c.C.[Tomcat].[localhost].[/]</logger>
+                <message>Initializing Spring DispatcherServlet 'dispatcherServlet'
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:50.844</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-1</thread>
+                <logger>o.s.web.servlet.DispatcherServlet</logger>
+                <message>Initializing Servlet 'dispatcherServlet'
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:33:50.845</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-1</thread>
+                <logger>o.s.web.servlet.DispatcherServlet</logger>
+                <message>Completed initialization in 1 ms
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:34:29.150</timestamp>
+                <level>INFO</level>
+                <thread>SpringApplicationShutdownHook</thread>
+                <logger>o.s.b.w.e.tomcat.GracefulShutdown</logger>
+                <message>Commencing graceful shutdown. Waiting for active requests to complete
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 14:34:29.163</timestamp>
+                <level>INFO</level>
+                <thread>tomcat-shutdown</thread>
+                <logger>o.s.b.w.e.tomcat.GracefulShutdown</logger>
+                <message>Graceful shutdown complete
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:50.484</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>c.e.l.EventLoggingServiceApplication</logger>
+                <message>Starting EventLoggingServiceApplication using Java 17.0.14 with PID 5993 (/Users/prabintimilsina/Documents/event-logging-service/target/classes started by prabintimilsina in /Users/prabintimilsina/Documents/event-logging-service)
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:50.485</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>c.e.l.EventLoggingServiceApplication</logger>
+                <message>No active profile set, falling back to 1 default profile: "default"
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.000</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.s.b.w.e.tomcat.TomcatWebServer</logger>
+                <message>Tomcat initialized with port 8080 (http)
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.005</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.coyote.http11.Http11NioProtocol</logger>
+                <message>Initializing ProtocolHandler ["http-nio-8080"]
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.006</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.catalina.core.StandardService</logger>
+                <message>Starting service [Tomcat]
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.006</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.catalina.core.StandardEngine</logger>
+                <message>Starting Servlet engine: [Apache Tomcat/10.1.36]
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.035</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.c.c.C.[Tomcat].[localhost].[/]</logger>
+                <message>Initializing Spring embedded WebApplicationContext
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.035</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.s.b.w.s.c.ServletWebServerApplicationContext</logger>
+                <message>Root WebApplicationContext: initialization completed in 530 ms
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.291</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.s.b.a.e.web.EndpointLinksResolver</logger>
+                <message>Exposing 1 endpoint beneath base path '/actuator'
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.309</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.a.coyote.http11.Http11NioProtocol</logger>
+                <message>Starting ProtocolHandler ["http-nio-8080"]
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.319</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>o.s.b.w.e.tomcat.TomcatWebServer</logger>
+                <message>Tomcat started on port 8080 (http) with context path '/'
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:10:51.333</timestamp>
+                <level>INFO</level>
+                <thread>main</thread>
+                <logger>c.e.l.EventLoggingServiceApplication</logger>
+                <message>Started EventLoggingServiceApplication in 1.117 seconds (process running for 1.303)
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:12:58.467</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-1</thread>
+                <logger>o.a.c.c.C.[Tomcat].[localhost].[/]</logger>
+                <message>Initializing Spring DispatcherServlet 'dispatcherServlet'
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:12:58.468</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-1</thread>
+                <logger>o.s.web.servlet.DispatcherServlet</logger>
+                <message>Initializing Servlet 'dispatcherServlet'
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:12:58.469</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-1</thread>
+                <logger>o.s.web.servlet.DispatcherServlet</logger>
+                <message>Completed initialization in 1 ms
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:12:58.518</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-1</thread>
+                <logger>com.example.logging.LoggingService</logger>
+                <message><log><type>USER_ACTION</type><message>User visited my_view</message></log>
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:13:51.986</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-2</thread>
+                <logger>com.example.logging.LoggingService</logger>
+                <message><log><type>USER_ACTION</type><message>User accessed the registration form</message></log>
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:13:54.256</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-4</thread>
+                <logger>com.example.logging.LoggingService</logger>
+                <message><log><type>USER_ACTION</type><message>User visited my_view</message></log>
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:14:18.329</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-6</thread>
+                <logger>com.example.logging.LoggingService</logger>
+                <message><log><type>USER_ACTION</type><message>Badge generated for visitor game thrones</message></log>
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:14:21.414</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-7</thread>
+                <logger>com.example.logging.LoggingService</logger>
+                <message><log><type>USER_ACTION</type><message>Visitor badge email sent to game@gmail.com</message></log>
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:14:21.433</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-9</thread>
+                <logger>com.example.logging.LoggingService</logger>
+                <message><log><type>USER_ACTION</type><message>Visitor game thrones registered successfully</message></log>
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:14:21.473</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-10</thread>
+                <logger>com.example.logging.LoggingService</logger>
+                <message><log><type>USER_ACTION</type><message>User accessed success page for visitor game thrones</message></log>
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:14:23.480</timestamp>
+                <level>INFO</level>
+                <thread>http-nio-8080-exec-1</thread>
+                <logger>com.example.logging.LoggingService</logger>
+                <message><log><type>USER_ACTION</type><message>User visited my_view</message></log>
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:16:55.594</timestamp>
+                <level>INFO</level>
+                <thread>SpringApplicationShutdownHook</thread>
+                <logger>o.s.b.w.e.tomcat.GracefulShutdown</logger>
+                <message>Commencing graceful shutdown. Waiting for active requests to complete
+</message>
+                </log>
+<log>
+                <timestamp>2025-03-20 15:16:55.601</timestamp>
+                <level>INFO</level>
+                <thread>tomcat-shutdown</thread>
+                <logger>o.s.b.w.e.tomcat.GracefulShutdown</logger>
+                <message>Graceful shutdown complete
+</message>
+                </log>

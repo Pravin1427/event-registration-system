@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Property Definitions -->
+    <property name="LOG_FILE_PATH" value="logs/application.log"/>
+    <property name="MAX_FILE_SIZE" value="5MB"/>
+    <property name="TOTAL_LOG_SIZE" value="50MB"/>
+    <property name="MAX_HISTORY" value="7"/>
+
+    <!-- File Appender -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE_PATH}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/application-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+            <maxHistory>${MAX_HISTORY}</maxHistory>
+            <totalSizeCap>${TOTAL_LOG_SIZE}</totalSizeCap>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                &lt;log&gt;
+                &lt;timestamp&gt;%d{yyyy-MM-dd HH:mm:ss.SSS}&lt;/timestamp&gt;
+                &lt;level&gt;%p&lt;/level&gt;
+                &lt;thread&gt;%t&lt;/thread&gt;
+                &lt;logger&gt;%logger{36}&lt;/logger&gt;
+                &lt;message&gt;%msg%n&lt;/message&gt;
+                &lt;/log&gt;%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- Console Appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root Logger -->
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
