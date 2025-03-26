@@ -6,6 +6,8 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,11 +28,16 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result) {
+    public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "register";
         }
-        userService.registerUser(user);
+        try {
+            userService.registerUser(user);
+        } catch (RuntimeException e) {
+            model.addAttribute("usernameError", e.getMessage());
+            return "register";
+        }
         return "redirect:/login";
     }
 
@@ -40,9 +47,14 @@ public class UserController {
     }
 
     @GetMapping("/dashboard")
-    public String dashboard(Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
+    public String dashboard(Model model, Authentication authentication) {
+        String username;
+        if (authentication instanceof OAuth2AuthenticationToken) {
+            OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
+            username = oAuth2User.getAttribute("login");
+        } else {
+            username = authentication.getName();
+        }
         model.addAttribute("username", username);
         return "dashboard";
     }
