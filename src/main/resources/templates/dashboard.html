@@ -1,13 +1,80 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
+
     <title>Dashboard</title>
+
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+    <script>
+
+        function refreshNames() {
+    fetch('http://localhost:8082/random-names') // Corrected endpoint
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            let table = document.getElementById('namesTable');
+
+            // Clear existing rows, but keep the header
+            while (table.rows.length > 1) {
+                table.deleteRow(1);
+            }
+
+            // Populate new random names
+            data.forEach(name => {
+                let row = table.insertRow();
+                let cell = row.insertCell();
+                cell.textContent = name;
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching random names:', error);
+        });
+}
+    </script>
+
 </head>
+
 <body>
+
 <h2>Welcome, <span th:text="${username}"></span>!</h2>
+
+
+
+<button onclick="refreshNames()">Refresh Names</button>
+
+
+
+<table id="namesTable">
+
+    <tr>
+
+        <th>Random Names</th>
+
+    </tr>
+
+    <tr th:each="name : ${randomNames}">
+
+        <td th:text="${name}"></td>
+
+    </tr>
+
+</table>
+
+
+
 <form th:action="@{/logout}" method="post">
+
     <button type="submit">Logout</button>
+
 </form>
+
 </body>
+
 </html>

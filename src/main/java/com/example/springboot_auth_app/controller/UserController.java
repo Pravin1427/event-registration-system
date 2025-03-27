@@ -16,6 +16,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -66,6 +69,12 @@ public class UserController {
             username = authentication.getName();
         }
         model.addAttribute("username", username);
+
+        // Fetch random names from the API
+        RestTemplate restTemplate = new RestTemplate();
+        List<String> randomNames = restTemplate.getForObject("http://localhost:8082/random-names", List.class);
+        model.addAttribute("randomNames", randomNames);
+
         return "dashboard";
     }
 }
