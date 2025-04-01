@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter; //Import this.
 
 import java.io.IOException;
 
@@ -23,6 +24,9 @@ public class SecurityConfig {
 
     @Autowired
     private CustomUserDetailsService userDetailsService;
+
+    @Autowired // add this line
+    private OtpVerificationFilter otpVerificationFilter;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -40,7 +44,7 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/login")
                         .failureUrl("/login?error=true")
-                        .defaultSuccessUrl("/verify-otp",true)
+                        .defaultSuccessUrl("/verify-otp", true)
                         .permitAll()
                 )
                 .oauth2Login(oauth2 -> oauth2
@@ -48,14 +52,15 @@ public class SecurityConfig {
                 )
                 .logout(logout -> logout
                         .logoutUrl("/auth/logout")
-                        .logoutSuccessUrl("/login?logout=true") // Redirect after logout
-                        .invalidateHttpSession(true)  // <-- Ensures session is invalidated
-                        .deleteCookies("JSESSIONID") // <-- Clears session cookies
+                        .logoutSuccessUrl("/login?logout=true")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
                         .clearAuthentication(true)
                         .permitAll()
                 )
                 .exceptionHandling(exceptionHandling ->
-                        exceptionHandling.authenticationEntryPoint(loginPageEntryPoint()));
+                        exceptionHandling.authenticationEntryPoint(loginPageEntryPoint()))
+                .addFilterBefore(otpVerificationFilter, UsernamePasswordAuthenticationFilter.class); // add this line
 
         return http.build();
     }
@@ -66,9 +71,9 @@ public class SecurityConfig {
             @Override
             public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException {
                 if (new AntPathRequestMatcher("/login").matches(request)) {
-                    response.sendRedirect("/login"); // Always redirect to the login page.
+                    response.sendRedirect("/login");
                 } else {
-                    response.sendRedirect("/oauth2/authorization/github"); // Default OAuth 2.0 behavior for other unauthenticated requests.
+                    response.sendRedirect("/oauth2/authorization/github");
                 }
             }
         };

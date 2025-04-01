@@ -4,6 +4,7 @@ import com.example.springboot_auth_app.model.User;
 import com.example.springboot_auth_app.repository.UserRepository;
 import com.example.springboot_auth_app.service.EmailService;
 import com.example.springboot_auth_app.service.OtpService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -48,7 +49,7 @@ public class OtpController {
     }
 
     @PostMapping("/verify-otp")
-    public String verifyOtp(@RequestParam("otp") String otp, Authentication authentication, Model model) {
+    public String verifyOtp(@RequestParam("otp") String otp, Authentication authentication, Model model, HttpSession session) { // add HttpSession session
         String username = authentication.getName();
         Optional<User> userOpt = userRepository.findByUsername(username);
 
@@ -56,6 +57,7 @@ public class OtpController {
             User user = userOpt.get();
             if (otpService.verifyOtp(user, otp)) {
                 otpService.clearOtp(user);
+                session.setAttribute("otpVerified", true); // Set the session attribute.
                 return "redirect:/dashboard";
             } else {
                 model.addAttribute("error", "Invalid or expired OTP.");
