@@ -40,7 +40,7 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/login")
                         .failureUrl("/login?error=true")
-                        .defaultSuccessUrl("/dashboard")
+                        .defaultSuccessUrl("/verify-otp",true)
                         .permitAll()
                 )
                 .oauth2Login(oauth2 -> oauth2

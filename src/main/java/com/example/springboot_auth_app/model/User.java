@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -22,6 +24,12 @@ public class User {
 
     @Email(message = "Invalid email format")
     private String email;
+
+    @Column(name = "verification_code")
+    private String otp;
+
+    @Column(name = "verification_code_expiry")
+    private LocalDateTime otpExpiration;
 
     // Getters and setters...
     public Long getId() {
@@ -54,5 +62,20 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getOtp() {
+        return otp;
+    }
+
+    public void setOtp(String otp) {
+        this.otp = otp;
+    }
+
+    public LocalDateTime getOtpExpiration() {
+        return otpExpiration;
+    }
+
+    public void setOtpExpiration(LocalDateTime otpExpiration) {
+        this.otpExpiration = otpExpiration;
     }
 }
