@@ -5,6 +5,7 @@ import com.example.springboot_auth_app.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -60,7 +61,11 @@ public class UserController {
 
     @Operation(summary = "Show dashboard")
     @GetMapping("/dashboard")
-    public String dashboard(Model model, Authentication authentication) {
+    public String dashboard(Model model, Authentication authentication, HttpServletResponse response) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return "redirect:/login"; // Redirect to login if not authenticated
+        }
+
         String username;
         if (authentication instanceof OAuth2AuthenticationToken) {
             OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
@@ -75,6 +80,12 @@ public class UserController {
         List<String> randomNames = restTemplate.getForObject("http://localhost:8082/random-names", List.class);
         model.addAttribute("randomNames", randomNames);
 
+        // 🚀 Prevent browser caching
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
+
         return "dashboard";
     }
+
 }

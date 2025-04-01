@@ -47,7 +47,13 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/dashboard")
                 )
                 .logout(logout -> logout
-                        .permitAll())
+                        .logoutUrl("/auth/logout")
+                        .logoutSuccessUrl("/login?logout=true") // Redirect after logout
+                        .invalidateHttpSession(true)  // <-- Ensures session is invalidated
+                        .deleteCookies("JSESSIONID") // <-- Clears session cookies
+                        .clearAuthentication(true)
+                        .permitAll()
+                )
                 .exceptionHandling(exceptionHandling ->
                         exceptionHandling.authenticationEntryPoint(loginPageEntryPoint()));
 

@@ -1,80 +1,72 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
     <title>Dashboard</title>
-
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
 
+    <!-- Prevent caching -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <script>
-
         function refreshNames() {
-    fetch('http://localhost:8082/random-names') // Corrected endpoint
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            let table = document.getElementById('namesTable');
+            fetch('http://localhost:8082/random-names') // Corrected endpoint
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    let table = document.getElementById('namesTable');
 
-            // Clear existing rows, but keep the header
-            while (table.rows.length > 1) {
-                table.deleteRow(1);
-            }
+                    // Clear existing rows, but keep the header
+                    while (table.rows.length > 1) {
+                        table.deleteRow(1);
+                    }
 
-            // Populate new random names
-            data.forEach(name => {
-                let row = table.insertRow();
-                let cell = row.insertCell();
-                cell.textContent = name;
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching random names:', error);
-        });
-}
+                    // Populate new random names
+                    data.forEach(name => {
+                        let row = table.insertRow();
+                        let cell = row.insertCell();
+                        cell.textContent = name;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching random names:', error);
+                });
+        }
+    </script>
+    <script>
+        window.history.replaceState(null, "", window.location.href);
+        window.onload = function() {
+            if (performance.navigation.type === 2) {
+                window.location.href = "/login";
+            }
+        };
     </script>
 
 </head>
 
 <body>
-
 <h2>Welcome, <span th:text="${username}"></span>!</h2>
-
-
 
 <button onclick="refreshNames()">Refresh Names</button>
 
-
-
 <table id="namesTable">
-
     <tr>
-
         <th>Random Names</th>
-
     </tr>
-
     <tr th:each="name : ${randomNames}">
-
         <td th:text="${name}"></td>
-
     </tr>
-
 </table>
 
-
-
-<form th:action="@{/logout}" method="post">
-
+<form th:action="@{/auth/logout}" method="post">
     <button type="submit">Logout</button>
-
 </form>
-
 </body>
 
 </html>
