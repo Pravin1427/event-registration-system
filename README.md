@@ -207,4 +207,6 @@ A comprehensive system for managing school operations, including user management
 - Financial reporting
 
 ## ERD
+![School ER Diagram](https://github.com/Pravin1427/event-registration-system/blob/schoolmanagement/school_updated.png?raw=true)
+
 
